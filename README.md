@@ -84,6 +84,8 @@
 - Submission 파일을 채점서버에 올리면, F1-Score를 기준으로 결과를 보여주는 방식입니다.
 - 평가기준: F1-score
 
+<br>
+
 ## 시도한 방법들 및 결과
 
 | Index 	| Model(Backbone) 	| Trial 	| Score 	|
@@ -96,6 +98,51 @@
 | 6 	| EfficientNet b4 	| - Face-crop Augmentation<br>- Age filter(58)<br>- Label smoothing loss(0.05)<br>- MADGRAD optimizer 	| - Accuracy: 80.0952%<br>- F1-score: 0.7582 	|
 | 7 	| EfficientNet b4 	| - Age filter(58)<br>- Label smoothing loss(0.05)<br>- MADGRAD optimizer 	| - Accuracy: 80.8730%<br>- F1-score: 0.7681 	|
 | 8 	| EfficientNet b4 	| - Age filter(58)<br>- Label smoothing loss(0.05)<br>- MADGRAD optimizer<br>+ fine tuning(SGD) 	| - Accuracy: 81.2381%<br>- F1-score: 0.7716 	|
+
+<br>
+
+## 소스코드 설명
+  
+### Efficientnet_b4
+
+- efficientnet b4 pretrained model 사용
+- loss function을 바꿔가며 실험
+- optimizer로 Adamp, MADGRAD 사용해봄
+- Age Filter: 60세 이상 그룹의 레이블을 임의로 58세 이상 데이터로 조정하여 사용
+
+### K_fold_Efficientnet_b4
+
+- 위의 Efficientnet_b4 구조에 K-fold를 추가
+- dataset.py > MaskSplitByStratifiedProfileDataset 클래스 추가 구현
+
+### Resnet50
+
+- Resnet50 pretrained model 사용하여 전이학습
+
+### VGG11
+
+- VGG11 pretrained model 사용하여 전이학습
+
+### CLAHE
+
+- Contrast Limited Adaptive Histogram Equalization
+- 타일(8*8)단위 이미지 히스토그램 균일화
+- 타일간 경계부분은 Bilinear interpolation 적용
+- 이미지 히스토그램 균일화를 사용하여 데이터셋 생성
+
+### FacialDetection
+
+- opencv CascadeClassifier 사용
+- 얼굴 부위를 중심으로 380*380 이미지를 crop하여 데이터셋 생성
+
+### Fine_tuning_SGD
+
+- 60세 이상 그룹의 레이블을 임의로 58세 이상 데이터로 조정해
+
+### MISC
+
+- DataAnalysis
+- Data_processing
 
 <br>
 
