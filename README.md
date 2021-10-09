@@ -61,3 +61,5 @@
 
 - Submission 파일을 채점서버에 올리면, F1-Score를 기준으로 결과를 보여주는 방식입니다.
 - 평가기준: F1-score
+
+> 경진대회 과정에 대한 기록, 사용한 아키텍처는 [Notion](https://shy-perfume-f1a.notion.site/Wrap-Up-febd03ed40724fb7977c18fd8bd8a5c6)에 wrap-up report로 올려두었습니다.
