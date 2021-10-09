@@ -83,6 +83,10 @@
 
 - Submission 파일을 채점서버에 올리면, F1-Score를 기준으로 결과를 보여주는 방식입니다.
 - 평가기준: F1-score
+  <img src="f1-score-img.png" width="40%">
+<!-- $$F_1 = 2 * {{precision * recall} \over {precision + recall}}$$
+$$precision = {TP \over {TP + FP}}$$
+$$recall = {TP \over {TP + FN}}$$ -->
 
 <br>
 
