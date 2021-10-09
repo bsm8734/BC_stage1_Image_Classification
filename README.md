@@ -12,16 +12,20 @@
 
 ## 결과
 
-- Public LB Score
-<img src="https://img.shields.io/static/v1?style=flat&label=Accuracy&message=81.2381%&color=#263859">
+<!-- #### Public LB Score  
+<img src="https://img.shields.io/static/v1?label=Accuracy&message=81.2381%&color=blue"> <img src="https://img.shields.io/static/v1?label=F1-score&message=0.7716%&color=blue"> <img src="https://img.shields.io/static/v1?label=Rank&message=(21/223)&color=red">
 
-Accuracy: 81.2381%
-  - F1-score: 0.7716
-  - Rank: 21등 (21/223)
-- Private LB Score
-  - Accuracy: 80.3651%
-  - F1-score: 0.7541
-  - Rank: 28등 (28/223)
+#### Private LB Score
+  <img src="https://img.shields.io/static/v1?label=Accuracy&message=80.3651%&color=blue"> <img src="https://img.shields.io/static/v1?label=F1-score&message=0.7541%&color=blue"> <img src="https://img.shields.io/static/v1?label=Rank&message=(28/223)&color=red"> -->
+  
+- **Public LB Score**
+  - Accuracy: `81.2381%`
+  - F1-score: `0.7716`
+  - Rank: **21등** `(21/223)`
+- **Private LB Score**
+  - Accuracy: `80.3651%`
+  - F1-score: `0.7541`
+  - Rank: **28등** `(28/223)`
 
 ## 데이터 설명
 
@@ -79,6 +83,19 @@ Accuracy: 81.2381%
 
 - Submission 파일을 채점서버에 올리면, F1-Score를 기준으로 결과를 보여주는 방식입니다.
 - 평가기준: F1-score
+
+## 시도한 방법들 및 결과
+
+| Index 	| Model(Backbone) 	| Trial 	| Score 	|
+|:---:	|:---:|---	|---	|
+| 1 	| VGG11 	|  	| - Accuracy: 45.8600%<br>- F1-score: 0.3300 	|
+| 2 	| ResNet50 	| - Adam optimizer<br>- CE loss 	| - Accuracy: 54.2500%<br>- F1-score: 0.5400 	|
+| 3 	| EfficientNet b4 	| - Random-crop(256, 128)<br>- AdamP optimizer<br>- Focal loss 	| - Accuracy: 73.6984%<br>- F1-score: 0.6986 	|
+| 4 	| ResNet50 	| - Age filter(58)<br>- CenterCrop(380,380)<br>- MADGRAD optimizer 	| - Accuracy: 73.6984%<br>- F1-score: 0.7206 	|
+| 5 	| EfficientNet b4 	| - CLAHE(전처리)<br>- Age filter(58)<br>- CenterCrop(380,380)<br>- Label smoothing loss(0.05)<br>- MADGRAD optimizer 	| - Accuracy: 79.2857%<br>- F1-score: 0.7493 	|
+| 6 	| EfficientNet b4 	| - Face-crop Augmentation<br>- Age filter(58)<br>- Label smoothing loss(0.05)<br>- MADGRAD optimizer 	| - Accuracy: 80.0952%<br>- F1-score: 0.7582 	|
+| 7 	| EfficientNet b4 	| - Age filter(58)<br>- Label smoothing loss(0.05)<br>- MADGRAD optimizer 	| - Accuracy: 80.8730%<br>- F1-score: 0.7681 	|
+| 8 	| EfficientNet b4 	| - Age filter(58)<br>- Label smoothing loss(0.05)<br>- MADGRAD optimizer<br>+ fine tuning(SGD) 	| - Accuracy: 81.2381%<br>- F1-score: 0.7716 	|
 
 <br>
 
