@@ -61,14 +61,3 @@
 
 - Submission 파일을 채점서버에 올리면, F1-Score를 기준으로 결과를 보여주는 방식입니다.
 - 평가기준: F1-score
-<!-- $$F_1 = 2 * {{precision * recall} \over {precision + recall}}$$ --> 
-
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math="></div>
-
-<!-- $$precision = {TP \over {TP + FP}}$$ --> 
-
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math="></div>
-
-<!-- $$recall = {TP \over {TP + FN}}$$ --> 
-
-<div align="center"><img style="background: white;" src="https://render.githubusercontent.com/render/math?math="></div>
