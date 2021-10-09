@@ -1,9 +1,27 @@
 # 이미지분류 경진대회
 
+- `부스트캠프 AI Tech 1기` 과정 중, `P stage 1` 기간 동안 참여한 이미지 분류 경진대회 소스코드 입니다.
+- 대회기간: 2021.03. ~ 2021.
+
+## 대회 설명
+
 - 얼굴을 정면으로 찍은 사진이 입력으로 주어집니다. (총 18,000장)
 - `마스크 정상 착용 여부(3)` * `나이대(3)` * `성별(2)` = 18 classes
 - 총 18개의 클래스로 이미지를 분류하는 경진대회입니다.
 - 평가지표는 `f1-score`를 사용합니다.
+
+## 결과
+
+- Public LB Score
+<img src="https://img.shields.io/static/v1?style=flat&label=Accuracy&message=81.2381%&color=#263859">
+
+Accuracy: 81.2381%
+  - F1-score: 0.7716
+  - Rank: 21등 (21/223)
+- Private LB Score
+  - Accuracy: 80.3651%
+  - F1-score: 0.7541
+  - Rank: 28등 (28/223)
 
 ## 데이터 설명
 
@@ -62,4 +80,6 @@
 - Submission 파일을 채점서버에 올리면, F1-Score를 기준으로 결과를 보여주는 방식입니다.
 - 평가기준: F1-score
 
-> 경진대회 과정에 대한 기록, 사용한 아키텍처는 [Notion](https://shy-perfume-f1a.notion.site/Wrap-Up-febd03ed40724fb7977c18fd8bd8a5c6)에 wrap-up report로 올려두었습니다.
+<br>
+
+> 경진대회 과정에 대한 기록, 사용한 아키텍처는 [**Notion**](https://shy-perfume-f1a.notion.site/Wrap-Up-febd03ed40724fb7977c18fd8bd8a5c6)에 `wrap-up report`로 올려두었습니다.
